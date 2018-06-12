@@ -29,7 +29,7 @@
 		
 		function Preview() {
 			$("#message").append("Запрошен предпросмотр виджета<br><br>");
-
+			VK.callMethod('showAppWidgetPreviewBox', 'text', 'return {"title": "Цитата"};');
 		}
 	</script>
 	
