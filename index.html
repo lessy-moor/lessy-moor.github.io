@@ -7,17 +7,21 @@
 	<script src="https://vk.com/js/api/xd_connection.js?2"></script>
 	
 	<style>
-		
+		#content { display: none; }
 	</style>
 </head>
 <body>
 	<h1>Сибирская хаски Дженни</h1>
 	<h2>Панель управления виджетом</h2>
 	<p id="message"></p>
+	<div id="content">
+		<button onlick="VK.callMethod('showGroupSettingsBox', 0)">Запросить права доступа</button>
+	</div>
 	
 	<script type="text/javascript"> 
 		VK.init(function() { 
 			 $("#message").append("Подключение к API выполнено успешно!<br><br>");
+			 $("#content").show();
 		}, function() { 
 			 $("#message").append("Ошибка при подключении к API<br><br>");
 		}, '5.78'); 
