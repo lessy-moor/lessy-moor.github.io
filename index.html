@@ -16,7 +16,7 @@
 	<p id="message"></p>
 	<div id="content">
 		<button onclick="VK.callMethod('showGroupSettingsBox', 0)">Запросить права доступа</button>
-		<button onclick="Preview">Предварительный просмотр виджета</button>
+		<button onclick="Preview()">Предварительный просмотр виджета</button>
 	</div>
 	
 	<script type="text/javascript"> 
@@ -26,9 +26,10 @@
 		}, function() { 
 			 $("#message").append("Ошибка при подключении к API<br><br>");
 		}, '5.78'); 
+		return;
 		
 		function Preview() {
-			VK.callMethod('showAppWidgetPreviewBox', 'text', 'return { "title": "Цитата", "text": "Текст цитаты" };');
+			VK.callMethod("showAppWidgetPreviewBox", "text", "return { 'title': 'Цитата', 'text': 'Текст цитаты' };");
 		return; }
 	</script>
 	
