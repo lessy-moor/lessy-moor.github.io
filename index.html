@@ -4,12 +4,24 @@
 	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 	<meta http-equiv="Pragma" content="no-cache" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="https://vk.com/js/api/xd_connection.js?2"></script>
+	
+	<style>
+		
+	</style>
 </head>
 <body>
-	<p>Тест приложения</p>
-	<p>Сибирская хаски Дженни</p>
-	<script>
-		$("p").html("TEST");
+	<h1>Сибирская хаски Дженни</h1>
+	<h2>Панель управления виджетом</h2>
+	<p id="message"></p>
+	
+	<script type="text/javascript"> 
+		VK.init(function() { 
+			 $("#message").append("Подключение к API выполнено успешно!<br><br>");
+		}, function() { 
+			 $("#message").append("Ошибка при подключении к API<br><br>");
+		}, '5.78'); 
 	</script>
+	
 </body>
 </html>
