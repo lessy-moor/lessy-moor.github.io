@@ -28,6 +28,7 @@
 		}, '5.78'); 
 		
 		function Preview() {
+			e.preventDefault();
 			$("#message").append("Запрошен предпросмотр виджета<br><br>");
 			VK.callMethod('showAppWidgetPreviewBox', 'text', 'return {"title": "Цитата"};');
 		}
