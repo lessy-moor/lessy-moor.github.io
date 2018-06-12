@@ -28,9 +28,8 @@
 		}, '5.78'); 
 		
 		function Preview() {
-			e.preventDefault();
 			$("#message").append("Запрошен предпросмотр виджета<br><br>");
-			VK.callMethod('showAppWidgetPreviewBox', 'text', 'return {"title": "Цитата"};');
+			VK.callMethod('showAppWidgetPreviewBox', 'text', 'return {' + '"title": "Цитата",' + '"text": "Текст цитаты"' + '};');
 		}
 	</script>
 	
