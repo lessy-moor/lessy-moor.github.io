@@ -42,7 +42,7 @@
 		}
 		//Недельный вайп
 		function WeekWipe() {
-			$("#message").append("lol");
+			$.ajax({ url: "http://ahk-wiki.ru/lessy/core", success: function(data){ alert( "Прибыли данные: " + data ); } });
 		}
 		//Полный вайп
 		function Wipe() {
