@@ -17,19 +17,50 @@
 	<div id="content">
 		<button onclick="VK.callMethod('showGroupSettingsBox', 0);">Запросить права доступа</button>
 		<button onclick="Preview();">Предварительный просмотр виджета</button>
+		<br><br>
+		<button onclick="WeekWipe();">Очистить недельные таблицы</button>
+		<button onclick="Wipe();">Удалить все данные</button>
+		<br><br>
+		ID пользователя: <input type="text" id="userid">
+		Баллы: <input type="text" id="points"><br>
+		<button onclick="AccurePoints();">Начислить баллы</button>
+		<button onclick="SetPoints();">Установить баллы</button>
 	</div>
 	
 	<script type="text/javascript"> 
+		//Инициализация приложения
 		VK.init(function() { 
 			 $("#message").append("Подключение к API выполнено успешно!<br><br>");
 			 $("#content").show();
 		}, function() { 
 			 $("#message").append("Ошибка при подключении к API<br><br>");
 		}, '5.78'); 
-		
+		//Предпросмотр и установка виджета
 		function Preview() {
 			$("#message").append("Запрошен предпросмотр виджета<br><br>");
 			VK.callMethod('showAppWidgetPreviewBox', 'text', 'return {' + '"title": "Самые активные за неделю",' + '"text": "Виджет ожидает инициализации..."' + '};');
+		}
+		//Недельный вайп
+		function WeekWipe() {
+			$.get("http://ahk-wiki.ru/lessy/core?weekwipe=1", function(data) { $("#message").append(data+"<br>"); });
+		}
+		//Полный вайп
+		function Wipe() {
+			$.get("http://ahk-wiki.ru/lessy/core?wipe=1", function(data) { $("#message").append(data+"<br>"); });
+		}
+		//Начислить баллы
+		function AccurePoints() {
+			var id=$("#userid").val();
+			var points=$("#points").val();
+			if(id<1) return;
+			$.get("http://ahk-wiki.ru/lessy/core", { id: id, "points": points }).done(function(data) { $("#message").append(data+"<br>"); });
+		}
+		//Установить баллы
+		function SetPoints() {
+			var id=$("#userid").val();
+			var points=$("#points").val();
+			if(id<1) return;
+			$.get("http://ahk-wiki.ru/lessy/core", { id: id, points: points, set: "1" }).done(function(data) { $("#message").append(data+"<br>"); });
 		}
 	</script>
 	
