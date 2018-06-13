@@ -42,25 +42,19 @@
 		}
 		//Недельный вайп
 		function WeekWipe() {
-			$.get("http://ahk-wiki.ru/lessy/core?weekwipe=1", function(data) { $("#message").append(data+"<br>"); });
+			jQuery.get("http://ahk-wiki.ru/lessy/core?weekwipe=1", "weekwipe=1", function(data) { $("#message").append(data+"<br>"); } );
 		}
 		//Полный вайп
 		function Wipe() {
-			$.get("http://ahk-wiki.ru/lessy/core?wipe=1", function(data) { $("#message").append(data+"<br>"); });
+
 		}
 		//Начислить баллы
 		function AccurePoints() {
-			var id=$("#userid").val();
-			var points=$("#points").val();
-			if(id<1) return;
-			$.get("http://ahk-wiki.ru/lessy/core", { id: id, "points": points }).done(function(data) { $("#message").append(data+"<br>"); });
+
 		}
 		//Установить баллы
 		function SetPoints() {
-			var id=$("#userid").val();
-			var points=$("#points").val();
-			if(id<1) return;
-			$.get("http://ahk-wiki.ru/lessy/core", { id: id, points: points, set: "1" }).done(function(data) { $("#message").append(data+"<br>"); });
+
 		}
 	</script>
 	
