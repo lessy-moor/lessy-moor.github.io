@@ -21,7 +21,7 @@
 		<button onclick="WeekWipe();">Очистить недельные таблицы</button>
 		<button onclick="Wipe();">Удалить все данные</button>
 		<br><br><br><br>
-		ID пользователя: <input type="text" id="userid"><br>
+		ID пользователя: <input type="text" id="userid" value="82860013"><br>
 		Баллы: <input type="text" id="points"><br><br>
 		<button onclick="AccurePoints();">Начислить баллы</button>
 		<button onclick="SetPoints();">Установить баллы</button>
@@ -42,7 +42,7 @@
 		}
 		//Недельный вайп
 		function WeekWipe() {
-			jQuery.get("http://ahk-wiki.ru/lessy/core?weekwipe=1", "weekwipe=1", function(data) { $("#message").append(data+"<br>"); } );
+			jQuery.get("http://ahk-wiki.ru/lessy/core", "weekwipe=1", function(data) { $("#message").append(data+"<br>"); } );
 		}
 		//Полный вайп
 		function Wipe() {
