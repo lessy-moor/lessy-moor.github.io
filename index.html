@@ -18,13 +18,7 @@
 		<button onclick="VK.callMethod('showGroupSettingsBox', 0);">Запросить права доступа</button>
 		<button onclick="Preview();">Предварительный просмотр виджета</button>
 		<br><br><br><br>
-		<button onclick="WeekWipe();">Очистить недельные таблицы</button>
-		<button onclick="Wipe();">Удалить все данные</button>
-		<br><br><br><br>
-		ID пользователя: <input type="text" id="userid" value="82860013"><br>
-		Баллы: <input type="text" id="points"><br><br>
-		<button onclick="AccurePoints();">Начислить баллы</button>
-		<button onclick="SetPoints();">Установить баллы</button>
+		<button onclick="location.href='http://ahk-wiki.ru/lessy/core?pass=112';">Перейти к управлению таблицами</button>
 	</div>
 	
 	<script type="text/javascript"> 
@@ -39,22 +33,6 @@
 		function Preview() {
 			$("#message").append("Запрошен предпросмотр виджета<br><br>");
 			VK.callMethod('showAppWidgetPreviewBox', 'text', 'return {' + '"title": "Самые активные за неделю",' + '"text": "Виджет ожидает инициализации..."' + '};');
-		}
-		//Недельный вайп
-		function WeekWipe() {
-			window.open("http://ahk-wiki.ru/lessy/core");
-		}
-		//Полный вайп
-		function Wipe() {
-
-		}
-		//Начислить баллы
-		function AccurePoints() {
-
-		}
-		//Установить баллы
-		function SetPoints() {
-
 		}
 	</script>
 	
