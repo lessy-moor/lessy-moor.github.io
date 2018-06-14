@@ -50,8 +50,7 @@
 		//Предпросмотр и установка виджета
 		function Preview() {
 			$("#message").append("Запрошен предпросмотр виджета<br><br>");
-			//alert(VK.callMethod('showAppWidgetPreviewBox', 'text', 'return '+window.code+';'));
-			alert('return '+window.code+';');
+			VK.callMethod('showAppWidgetPreviewBox', 'text', 'return '+window.code+';');
 		}
 	</script>
 </body>
