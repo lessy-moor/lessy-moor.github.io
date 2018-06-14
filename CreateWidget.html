@@ -39,7 +39,7 @@
 				]
 			]
 		};
-		code=$.param( code );
+		code=JSON.stringify(code);
 		//Инициализация приложения
 		VK.init(function() { 
 			 $("#message").append("Подключение к API выполнено успешно!<br><br>");
