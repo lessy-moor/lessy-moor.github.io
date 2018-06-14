@@ -17,7 +17,6 @@
 		<button onclick="VK.callMethod('showGroupSettingsBox', 0);">Запросить права доступа</button>
 		<button onclick="Preview();">Предварительный просмотр виджета</button>
 		<br><br><br><br>
-		<button onclick="location.href='http://ahk-wiki.ru/lessy/core?pass=112';">Перейти к управлению таблицами</button>
 	</div>
 	<script type="text/javascript">
 		var code={ 
@@ -36,7 +35,7 @@
 		//Предпросмотр и установка виджета
 		function Preview() {
 			$("#message").append("Запрошен предпросмотр виджета<br><br>");
-			VK.callMethod('showAppWidgetPreviewBox', 'text', 'return '+code+';');
+			VK.callMethod('showAppWidgetPreviewBox', 'text', code);
 		}
 	</script>
 </body>
