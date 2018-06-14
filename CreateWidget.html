@@ -20,26 +20,15 @@
 	</div>
 	<script type="text/javascript">
 		var code={ 
-			"title": "sgesgesges",
-			"title_url": "https://vk.com/",
-			"head":
-			[
-				{ "text": "sfesgges" },
-				{ "text": "sgesge" }
-			],
-			"body":
-			[
-				[
-					{ "text": "segges" },
-					{ "text": "segseg" }
-				],
-				[
-					{ "text": "segesgg" },
-					{ "text": "esgsegg" }
-				]
-			]
+			"title": "Цитата дня", 
+			"title_url": "https://vk.com", 
+			"more": "Читать все цитаты", 
+			"more_url": "https://vk.com", 
+			"text": "Нам нужно гордиться", 
+			"descr": "Дэвид Кэмерон о победе сторонников выхода страны", 
 		};
 		code=JSON.stringify(code, null, ' ');
+		code="return "+code+";";
 		//Инициализация приложения
 		VK.init(function() { 
 			 $("#message").append("Подключение к API выполнено успешно!<br><br>");
@@ -50,7 +39,7 @@
 		//Предпросмотр и установка виджета
 		function Preview() {
 			$("#message").append("Запрошен предпросмотр виджета<br><br>");
-			VK.callMethod('showAppWidgetPreviewBox', 'text', window.code);
+			VK.callMethod("showAppWidgetPreviewBox", "text", window.code);
 		}
 	</script>
 </body>
