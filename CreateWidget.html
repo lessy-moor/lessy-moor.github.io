@@ -11,7 +11,7 @@
 </head>
 <body>
 	<h1>Создать виджет для сообщества</h1>
-	<h2>Панель управления виджетом 3</h2>
+	<h2>Панель управления виджетом 4</h2>
 	<p id="message"></p>
 	<div id="content">
 		<button onclick="VK.callMethod('showGroupSettingsBox', 0);">Запросить права доступа</button>
@@ -36,7 +36,7 @@
 		//Предпросмотр и установка виджета
 		function Preview() {
 			$("#message").append("Запрошен предпросмотр виджета<br><br>");
-			//VK.callMethod('showAppWidgetPreviewBox', 'text', window.code);
+			VK.callMethod('showAppWidgetPreviewBox', 'text', 'return '+window.code+';');
 		}
 	</script>
 </body>
