@@ -11,7 +11,7 @@
 </head>
 <body>
 	<h1>Создать виджет для сообщества</h1>
-	<h2>Панель управления виджетом 9</h2>
+	<h2>Панель управления виджетом 10</h2>
 	<p id="message"></p>
 	<div id="content">
 		<button onclick="VK.callMethod('showGroupSettingsBox', 0);">Запросить права доступа</button>
@@ -21,7 +21,7 @@
 	<script type="text/javascript">
 		var code={ 
 "title": "Рестораны", 
-"rows": [{ 
+"rows": {{ 
 "title": "Корюшка", 
 "title_url": "https://vk.com", 
 "button": "Забронировать стол", 
@@ -37,7 +37,7 @@
 "address": "Александровский парк, д. 4/3, лит. А", 
 "time": "Каждый день с 12:00 до 1:00", 
 "text": "Давно ли вы красиво, с чувством и толком ели в парке? Главное украшение Александровского парка — Food Park приглашает на еду со всех концов света на четвертый этаж ТРЦ «Великан»." 
-}] 
+}} 
 };
 		code=JSON.stringify(code, null, ' ');
 		code="return "+code+";";
