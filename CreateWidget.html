@@ -11,7 +11,7 @@
 </head>
 <body>
 	<h1>Создать виджет для сообщества</h1>
-	<h2>Панель управления виджетом 2</h2>
+	<h2>Панель управления виджетом 1</h2>
 	<p id="message"></p>
 	<div id="content">
 		<button onclick="VK.callMethod('showGroupSettingsBox', 0);">Запросить права доступа</button>
@@ -25,7 +25,7 @@
 			"text": "Текст виджета", 
 			"descr": "Дэвид Кэмерон о победе сторонников"
 		};
-		JSON.stringify(code);
+		code=JSON.stringify(code);
 		alert(code);
 		//Инициализация приложения
 		VK.init(function() { 
