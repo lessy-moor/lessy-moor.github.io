@@ -1,0 +1,43 @@
+<html>
+<head>
+	<title>Создать виджет для сообщества</title>
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="https://vk.com/js/api/xd_connection.js?2"></script>
+	<style>
+		#content { display: none; }
+	</style>
+</head>
+<body>
+	<h1>Создать виджет для сообщества</h1>
+	<h2>Панель управления виджетом</h2>
+	<p id="message"></p>
+	<div id="content">
+		<button onclick="VK.callMethod('showGroupSettingsBox', 0);">Запросить права доступа</button>
+		<button onclick="Preview();">Предварительный просмотр виджета</button>
+		<br><br><br><br>
+		<button onclick="location.href='http://ahk-wiki.ru/lessy/core?pass=112';">Перейти к управлению таблицами</button>
+	</div>
+	<script type="text/javascript">
+		var code={ 
+			"title": "Цитата дня", 
+			"title_url": "https://vk.com", 
+			"text": "Текст виджета", 
+			"descr": "Дэвид Кэмерон о победе сторонников"
+		};
+		//Инициализация приложения
+		VK.init(function() { 
+			 $("#message").append("Подключение к API выполнено успешно!<br><br>");
+			 $("#content").show();
+		}, function() { 
+			 $("#message").append("Ошибка при подключении к API<br><br>");
+		}, '5.78'); 
+		//Предпросмотр и установка виджета
+		function Preview() {
+			$("#message").append("Запрошен предпросмотр виджета<br><br>");
+			VK.callMethod('showAppWidgetPreviewBox', 'text', 'return {'+code+'};');
+		}
+	</script>
+</body>
+</html>
